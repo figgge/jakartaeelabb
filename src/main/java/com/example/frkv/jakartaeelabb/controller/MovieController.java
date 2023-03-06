@@ -5,6 +5,10 @@ import com.example.frkv.jakartaeelabb.entity.Movie;
 import com.example.frkv.jakartaeelabb.exception.IdNotFoundException;
 import com.example.frkv.jakartaeelabb.mapper.Mapper;
 import com.example.frkv.jakartaeelabb.repository.MovieRepository;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
@@ -34,6 +38,10 @@ public class MovieController {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Returns Movie object",
+                content = @Content(schema = @Schema(implementation = MovieDto.class))),
+            @ApiResponse(responseCode = "404", description = "Id not found")})
     public Response getOneMovie(@PathParam("id") Long id) {
         var movie = repository.findOne(id);
         if (movie.isPresent())
