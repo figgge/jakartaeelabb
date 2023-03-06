@@ -2,6 +2,7 @@ package com.example.frkv.jakartaeelabb.controller;
 
 import com.example.frkv.jakartaeelabb.dto.MovieDto;
 import com.example.frkv.jakartaeelabb.entity.Movie;
+import com.example.frkv.jakartaeelabb.exception.IdNotFoundException;
 import com.example.frkv.jakartaeelabb.mapper.Mapper;
 import com.example.frkv.jakartaeelabb.repository.MovieRepository;
 import jakarta.inject.Inject;
@@ -37,7 +38,7 @@ public class MovieController {
         var movie = repository.findOne(id);
         if (movie.isPresent())
             return Response.ok().entity(movie.get()).build();
-        throw new NotFoundException("Id not found: " + id);
+        throw new IdNotFoundException("Id not found: " + id);
     }
 
     @DELETE
