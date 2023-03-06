@@ -6,7 +6,8 @@ public class MovieDto {
     private Long id;
     private String name;
 
-    public MovieDto() {}
+    public MovieDto() {
+    }
 
     public MovieDto(Movie movie) {
         this.id = movie.getId();

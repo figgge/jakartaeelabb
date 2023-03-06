@@ -40,7 +40,7 @@ public class MovieController {
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Returns Movie object",
-                content = @Content(schema = @Schema(implementation = MovieDto.class))),
+                    content = @Content(schema = @Schema(implementation = MovieDto.class))),
             @ApiResponse(responseCode = "404", description = "Id not found")})
     public Response getOneMovie(@PathParam("id") Long id) {
         var movie = repository.findOne(id);

@@ -17,7 +17,8 @@ public class Movie {
     @Size(min = 1)
     private String name;
 
-    public Movie() {}
+    public Movie() {
+    }
 
     public Movie(long id, String name) {
         this.id = id;
