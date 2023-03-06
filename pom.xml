@@ -12,7 +12,6 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.comiler.release>19</maven.comiler.release>
         <junit.version>5.9.1</junit.version>
         <maven.compiler.release>19</maven.compiler.release>
     </properties>

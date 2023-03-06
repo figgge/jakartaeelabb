@@ -40,5 +40,5 @@ RUN bash -c '$WILDFLY_HOME/bin/standalone.sh &' && \
       rm -rf $WILDFLY_HOME/standalone/configuration/standalone_xml_history/ $WILDFLY_HOME/standalone/log/* && \
       rm -f /tmp/*.jar
 
-COPY --from=build app/target/jakartaeelabb.war /opt/jboss/wildfly/standalone/deployments/
+COPY --from=build app/target/*.war /opt/jboss/wildfly/standalone/deployments/
 CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
