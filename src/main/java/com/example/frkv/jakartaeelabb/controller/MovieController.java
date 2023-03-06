@@ -4,11 +4,9 @@ import com.example.frkv.jakartaeelabb.dto.MovieDto;
 import com.example.frkv.jakartaeelabb.entity.Movie;
 import com.example.frkv.jakartaeelabb.mapper.Mapper;
 import com.example.frkv.jakartaeelabb.repository.MovieRepository;
-import com.example.frkv.jakartaeelabb.validate.MovieValidator;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
-import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -23,9 +21,6 @@ public class MovieController {
 
     @Inject
     Mapper mapper;
-
-    @Inject
-    MovieValidator validator;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
